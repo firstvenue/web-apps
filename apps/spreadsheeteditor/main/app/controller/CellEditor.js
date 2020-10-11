@@ -147,10 +147,12 @@ define([
         },
 
         onApiCellSelection: function(info) {
+            console.log('onApiCellSelection', info)
             this.editor.updateCellInfo(info);
         },
 
         onApiSelectionChanged: function(info) {
+            console.log('onApiSelectionChanged',info)
             var seltype = info.asc_getSelectionType(),
                 coauth_disable = (!this.mode.isEditMailMerge && !this.mode.isEditDiagram) ? (info.asc_getLocked() === true || info.asc_getLockedTable() === true || info.asc_getLockedPivotTable()===true) : false;
 
